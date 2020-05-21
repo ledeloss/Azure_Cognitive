@@ -27,8 +27,7 @@ namespace Cog
         }
         static void KeyPhraseExtractionExample (TextAnalyticsClient client)
         {
-            var response = client.ExtractKeyPhrases ("Necesito Comprar un regalo para mi tia","ES");
-        
+            var response = client.ExtractKeyPhrases ("Necesito Comprar un regalo para mi tia", "ES");
 
             // Printing key phrases
             Console.WriteLine ("Key phrases:");
@@ -38,6 +37,18 @@ namespace Cog
                 Console.WriteLine ($"\t{keyphrase}");
             }
         }
+        /* 
+         static void EntityRecognitionExample (TextAnalyticsClient client)
+         {
+             var response = client.RecognizeEntities ("Necesito Comprar un regalo para mi tia", "ES");
+             Console.WriteLine ("Named Entities:");
+             foreach (var entity in response.Value)
+             {
+                 Console.WriteLine ($"\tText: {entity.Text},\tCategory: {entity.Category},\tSub-Category: {entity.SubCategory}");
+                 Console.WriteLine ($"\t\tLength: {entity.GraphemeLength},\tScore: {entity.ConfidenceScore:F2}\n");
+             }
+         }
+         */
 
     }
 }
